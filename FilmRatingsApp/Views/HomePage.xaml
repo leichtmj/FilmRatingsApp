@@ -6,7 +6,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="ContentArea">
-        
-    </Grid>
+    <RelativePanel>
+        <TextBlock
+            x:Name="NomAppli"
+            FontSize="32"
+            FontWeight="Bold"
+            Foreground="White"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            Text="Jim’s Best Games" />
+        <Image
+            x:Name="logo"
+            Margin="0,50,0,0"
+            RelativePanel.AlignHorizontalCenterWithPanel="True"
+            RelativePanel.Below="NomAppli"
+            Source="https://imgur.com/H9lmLAF.png" />
+    </RelativePanel>
 </Page>
