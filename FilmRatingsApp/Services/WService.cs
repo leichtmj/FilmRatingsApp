@@ -37,7 +37,7 @@ public class WService : IWService
     {
         try
         {
-            return await client.GetFromJsonAsync<Utilisateur>(string.Concat(client.BaseAddress, $"getutilisateurbyid/{id}"));
+            return await client.GetFromJsonAsync<Utilisateur>(string.Concat(client.BaseAddress, $"utilisateurs/getutilisateurbyid/{id}"));
         }
         catch (Exception)
         {
@@ -45,11 +45,11 @@ public class WService : IWService
         }
     }
 
-    public async Task<Utilisateur> GetUtilisateursByMailAsync(string mail)
+    public async Task<Utilisateur> GetUtilisateursByMailAsync(string nomControleur, string mail)
     {
         try
         {
-            return await client.GetFromJsonAsync<Utilisateur>(string.Concat(client.BaseAddress, $"getutilisateurbyemail/{mail}"));
+            return await client.GetFromJsonAsync<Utilisateur>(string.Concat(client.BaseAddress, nomControleur, $"getutilisateurbyemail/{mail}"));
         }
         catch (Exception)
         {
@@ -84,11 +84,11 @@ public class WService : IWService
     }
 
 
-    public async Task<bool> PutUtilisateursAsync(Utilisateur s)
+    public async Task<bool> PutUtilisateursAsync(string nomControleur, Utilisateur s)
     {
         try
         {
-            var response = await client.PutAsJsonAsync($"series/{s.UtilisateurId}", s);
+            var response = await client.PutAsJsonAsync(string.Concat(client.BaseAddress, "utilisateurs", $"/{s.UtilisateurId}"), s);
             return response.IsSuccessStatusCode;
         }
         catch (Exception)

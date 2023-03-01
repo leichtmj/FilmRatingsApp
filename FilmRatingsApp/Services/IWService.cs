@@ -7,5 +7,5 @@ public interface IWService
     Task<List<Utilisateur>> GetUtilisateursAsync(string nomControleur);
     Task<Utilisateur> GetUtilisateursByIdAsync(int id);
     Task<bool> PostUtilisateursAsync(Utilisateur s);
-    Task<bool> PutUtilisateursAsync(Utilisateur s);
+    Task<bool> PutUtilisateursAsync(string c, Utilisateur s);
 }
