@@ -19,6 +19,6 @@
             Margin="0,50,0,0"
             RelativePanel.AlignHorizontalCenterWithPanel="True"
             RelativePanel.Below="NomAppli"
-            Source="https://imgur.com/H9lmLAF.png" />
+            Source="https://tenor.com/fr/view/rickroll-roll-rick-never-gonna-give-you-up-never-gonna-gif-22954713.gif" />
     </RelativePanel>
 </Page>

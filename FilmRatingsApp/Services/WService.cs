@@ -74,7 +74,7 @@ public class WService : IWService
     {
         try
         {
-            var response = await client.DeleteAsync($"series/{s.UtilisateurId}");
+            var response = await client.DeleteAsync(string.Concat(client.BaseAddress, "utilisateurs", $"/{s.UtilisateurId}"));
             return response.IsSuccessStatusCode;
         }
         catch (Exception)
@@ -96,6 +96,4 @@ public class WService : IWService
             return false;
         }
     }
-
-
 }
