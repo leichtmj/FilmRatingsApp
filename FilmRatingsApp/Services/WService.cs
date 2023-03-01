@@ -61,7 +61,7 @@ public class WService : IWService
     {
         try
         {
-            var response = await client.PostAsJsonAsync("series", s);
+            var response = await client.PostAsJsonAsync(string.Concat(client.BaseAddress, "utilisateurs"), s);
             return response.IsSuccessStatusCode;
         }
         catch (Exception)

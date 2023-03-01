@@ -88,6 +88,8 @@ public class UtilisateurViewModel : ObservableObject
         BtnSearchUtilisateurCommand = new RelayCommand(ActionSetSearch);
         BtnClearUtilisateurCommand = new RelayCommand(ActionSetClear);
         BtnModifyUtilisateurCommand = new RelayCommand(ActionSetSave);
+        BtnAddUtilisateurCommand = new RelayCommand(ActionSetAdd);
+
         UtilisateurSearch = new Utilisateur();
         //test();
     }
@@ -111,7 +113,8 @@ public class UtilisateurViewModel : ObservableObject
 
     public async void ActionSetAdd()
     {
-
+        await service.PostUtilisateursAsync(UtilisateurSearch);
+        DisplayshowAsync("Ok", "Tout comme Janelle, ça n'a pas marché.");
     }
 
     public async void test()
